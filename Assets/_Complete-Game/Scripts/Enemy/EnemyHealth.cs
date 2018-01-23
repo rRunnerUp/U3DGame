@@ -102,6 +102,13 @@ namespace CompleteProject
             // Increase the score by the enemy's score value.
             ScoreManager.score += scoreValue;
 
+            //Liczba modulo oznacza co ile punktów nowy level ma się dodać
+            if (ScoreManager.score % 30 == 0)
+            {
+                LevelManager.level += 1;
+                LevelManager.showLevelText = true;
+            }
+
             // After 2 seconds destory the enemy.
             Destroy (gameObject, 2f);
         }
